@@ -52,11 +52,4 @@ class Puzzle:
 def generar_estado_inicial():
     puzzle = list(range(9))  # números del 0 al 8
     random.shuffle(puzzle)
-    return [puzzle[i:i+3] for i in range(0, 9, 3)]
-
-# Uso de ejemplo
-estado_inicial = generar_estado_inicial()
-estado_objetivo = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
-solver = Puzzle(estado_inicial)
-solucion = solver.busqueda_en_amplitud(estado_objetivo)
-print(solucion)
+    return [puzzle[i+i+3] for i in range(0, 9, 3)]
